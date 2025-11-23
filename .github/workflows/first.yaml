@@ -1,5 +1,6 @@
 name: "first workflow"
 on: push
+
 jobs:
     first-job:
         runs-on: ubuntu-latest
@@ -9,3 +10,5 @@ jobs:
             
             - name : "Listing directories"
               run : ls -a 
+            - name : "Installing Dcoker "
+              run : ./script.sh
