@@ -1,0 +1,11 @@
+name: "first workflow"
+on: push
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name : "Checking out code"
+              uses : actions/checkout@v4
+            
+            - name : "Listing directories"
+              run : ls -a 
