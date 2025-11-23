@@ -1,0 +1,16 @@
+name: "Matrix - Running same job in different environemts"
+on : 
+    push:
+        branches: ["main"]
+jobs:
+    job-1:
+        strategy:
+          matrix:
+            os: [ubuntu-latest,windows-latest]
+            images: [hello-world,alphine]
+        runs-on: ${{matrix.os}}
+        steps:
+            - name : "Printing docker info"
+              run : docker info
+            - name : "Ruuning a imgae on os ${{matrix.os}}"
+              run : docker run ${{matrix.images}}
