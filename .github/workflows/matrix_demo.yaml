@@ -5,9 +5,16 @@ on :
 jobs:
     job-1:
         strategy:
+          fail-fast: false
+          max-parallel: 2
           matrix:
             os: [ubuntu-latest,windows-latest]
             images: [hello-world,alphine]
+            exclude:
+              - images : alphine
+                os : windows-latest
+            
+        
         runs-on: ${{matrix.os}}
         steps:
             - name : "Printing docker info"
