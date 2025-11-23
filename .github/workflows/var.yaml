@@ -1,0 +1,11 @@
+name: "Variables"
+on: push
+
+jobs:
+    job-1:
+        runs-on: ubuntu-latest
+        steps:
+            - name : "Acessing secrests and Printing"
+              run : echo {{secrets.UDAY}}
+            - name : "Printing varaiables"
+              run : echo {{vars.DOCKER_USERNAME}}
