@@ -6,6 +6,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name : "Acessing secrests and Printing"
-              run : echo {{secrets.UDAY}}
+              run : echo ${{secrets.UDAY}}
             - name : "Printing varaiables"
-              run : echo {{vars.DOCKER_USERNAME}}
+              run : echo ${{vars.DOCKER_USERNAME}}
